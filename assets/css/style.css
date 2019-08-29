@@ -3,9 +3,11 @@ body{
     background-image: url(https://rachelscoltock.com/wp-content/uploads/2017/08/girl-psychic.jpg);
 }
 .jumbotron{
-    margin-top: 100px;
+    margin-top: 250px;
     text-align: center;
     background-color: #0f40e0;
     color: white;
+    margin-left: 100px;
+    margin-right: 100px;
     
 }
