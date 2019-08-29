@@ -6,25 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psycic Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
     <!-- create Html content to display results -->
-    <div class= "wrapper">
-    <div class= "jumbotron">
-    <h2 id="displayText"></h2>
-    <p>Wins: <span id="wins"></span></p>
-    <p>Losses: <span id="losses"></span></p>
-    <p>Guesses Left: <span id="guessLeft"></span></p>
-    <p>Guesses so Far: <span id="guessSoFar"></span></p>
+    <div class="container">
+        <div class="jumbotron">
+            <h2 id="displayText"></h2>
+            <p>Wins: <span id="wins"></span></p>
+            <p>Losses: <span id="loses"></span></p>
+            <p>Guesses Left: <span id="guessLeft"></span></p>
+            <p>Guesses so Far: <span id="guessSoFar"></span></p>
 
 
 
 
 
-</div>
-</div>
+        </div>
+    </div>
 
 
 
@@ -34,100 +35,10 @@
 
 
 
-    <script>
-        // create veriables to store my values. wins, losses, userguess, computer games, computer choices
-        var wins = 0;
-        var losses = 0;
-        var guessSoFar = [];
-        var guessLeft = 9;
-        var userGuess;
-        var computerGuess;
-        var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];       
-        var displayText = "this is a test";
-
-        // create a function to display results to page DOM
-        function updateDisplay(){
-        document.querySelector("#displayText").innerHTML = displayText;
-        document.querySelector("#wins").innerHTML = wins;
-        document.querySelector("#losses").innerHTML = losses;
-        document.querySelector("#guessLeft").innerHTML = guessLeft;
-        document.querySelector("#guessSoFar").innerHTML = guessSoFar;
-        };
-
-        updateDisplay();
+    <script src="assets/java/game.js"></script>
 
 
 
-
-        // create a function to get a random letter for computer guess
-        function computerRandomLetter(){
-        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-        }
-
-
-
-
-        // create a function to reset my scores
-
-        function resetScores(){
-            var guessSoFar = [];
-            var guessLeft = 9;
-
-        }
-        computerRandomLetter()
-        console.log(computerGuess);
-
-        
-        // creat a onkey up function to grab userGuess
-
-        document.onkeyup = function (event) {
-
-        var userGuess = event.key;
-        
-        console.log(userGuess);
-        var userGuess = event.key.toLowerCase();
-        
-        if(userGuess === computerGuess){
-
-            wins ++;
-            guessSoFar = [];
-            guessLeft = 9;
-            computerRandomLetter();
-         }
-         else if(userGuess != computerGuess) {
-             guessLeft--;
-             guessSoFar.push(userGuess);
-             
-             document.querySelector("#guessSoFar").innerHTML = guessSoFar;
-         }
-         if (guessLeft === 0) {
-            guessLeft = 9;
-            losses ++;
-            guessChoices = [];
-         }
-
-             updateDisplay = [];
-             
-             
-             
-             
-             
-         
-        
-        }
-         
-
-
-
-
-
-    </script>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
